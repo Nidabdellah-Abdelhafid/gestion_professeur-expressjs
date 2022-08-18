@@ -1,0 +1,42 @@
+
+
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-success">
+    <!-- Navbar Brand-->
+
+    <!-- Sidebar Toggle-->
+
+    <!-- Navbar-->
+
+
+    <div class="container-fluid">
+        <a class="navbar-brand ps-3" href="/">Gestion de Professeurs</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="position-relative text-light m-5">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item"><img class="imgr" src="img/admin-icon.png"
+                        withd="50px" height="50px" alt=""></li>
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle" href="#"
+                        id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <strong class="text-light"><%= name %> </strong>
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/logout"><i class="fa
+                                    fa-sign-out" aria-hidden="true"></i> LogOut</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>

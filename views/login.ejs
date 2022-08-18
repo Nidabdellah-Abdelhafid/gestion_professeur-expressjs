@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="fonts/icomoon/style.css">
+        <link rel="stylesheet" href="css1/owl.carousel.min.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css1/bootstrap.min.css">
+        <!-- Style -->
+        <link rel="stylesheet" href="css1/style.css">
+        <title>Login</title>
+        <style type="text/css">
+       .backg {
+           margin-left: 100px;
+           margin-right: 100px;
+        }
+        .bod {
+           background-image: url('images/img1.jpg');
+           background-size: cover;
+           background-attachment: fixed;
+        }
+        
+        </style>
+    </head>
+     <body class="bod">
+       
+            
+                            <div class="content mt-3 mb-3 ml-5 mr-5 m-3">
+                                <% if(error !==''){ %>
+                                                        
+                                    <div class="row ml-5 col-md-7 alert alert-danger " <% if(error ==''){ %> style="display: none;"<% } %> >
+                                        <%= error %>
+                                    </div>
+                                     
+                                <% } %>
+
+                                <% if(emailnotex !==''){ %>
+                                                        
+                                    <div class="row ml-5 col-md-7 alert alert-danger " <% if(emailnotex ==''){ %> style="display: none;"<% } %> >
+                                        <%= emailnotex %>
+                                    </div>
+                                     
+                                <% } %>
+
+                                <% if(passInvalid !==''){ %>
+                                                        
+                                    <div class="row ml-5 col-md-7 alert alert-danger " <% if(passInvalid ==''){ %> style="display: none;"<% } %> >
+                                        <%= passInvalid %>
+                                    </div>
+                                     
+                                <% } %>
+                                    <div class="row backg alert-light mt-3 ml-5 mr-5">
+                                        <div class="col-md-4">
+                                            <img src="images/login.svg" alt="Image" class="img-fluid mb-5 mt-5" height="700px" width="800px" >
+                                        </div>
+                                        <div class="col-md-6 contents mt-5">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-8">
+                                                    <div class="mb-4">
+                                                        <h3>Login</h3>
+                                                        <p class="mb-4">Entre votre information.</p>
+                                                    </div>
+                                                    <form action="/login" method="post">
+                                                        
+                                                        <div class="form-group  mb-4">
+                                                            <label for="email">Email <strong class="text-danger"><sup>*</sup></strong></label>
+                                                            <input
+                                                                type="email"
+                                                                name="email"
+                                                                class="form-control"
+                                                                id="email"
+                                                                autofocus
+                                                                required
+                                                            >
+                                                        </div>
+                                                        <div class="form-group  mb-4">
+                                                            <label for="password">Password <strong class="text-danger"><sup>*</sup></strong></label>
+                                                            <input
+                                                                type="password"
+                                                                name="password"
+                                                                class="form-control"
+                                                                id="password"
+                                                                required
+                                                            >
+                                                        </div>
+                                                        <input type="submit" value="login" class="btn btn-block mb-2" style="background-color: rgb(39, 98, 248);color: white; font-size: 25px;">
+
+                                                        <div class="mb-4 mt-2">
+                                                            <label for="">Don't have an account yet ? <a href="/register" class="text-danger">Register</a></label>
+                                                            
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                      
+                    
+        <script src="js1/jquery-3.3.1.min.js"></script>
+        <script src="js1/popper.min.js"></script>
+        <script src="js1/bootstrap.min.js"></script>
+        <script src="js1/main.js"></script>
+   
+    </body>
+</html>
