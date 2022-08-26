@@ -1,33 +1,35 @@
 
 
-<nav class="sb-topnav navbar navbar-expand navbar-dark"  style="background-color:#28a745 ;">
-    <!-- Navbar Brand-->
-
-    <!-- Sidebar Toggle-->
-
-    <!-- Navbar-->
 
 
-    <div class="container-fluid">
-        <a class="navbar-brand ps-3" href="/"><img  src="../img/photo_projet1.png"
-            withd="50px" height="50px" alt=""> Gestion de Professeurs</a>
+<!-- Navbar Brand-->
+
+<!-- Sidebar Toggle-->
+
+<!--<nav class="sb-topnav navbar navbar-expand navbar-dark"  style="background-color:#28a745 ;">
+        <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="position-relative text-light m-1">
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">---</span>
+    </button>
+        <a class="navbar-brand ps-3" href="/dashbord"><img  src="../img/photo_projet1.png"
+            withd="50px" height="50px" alt=""> Gestion de Professeurs</a>
+        
+            <a class="navbar-brand ps-3" href="/"><i class="bi bi-person-lines-fill"></i> Liste professeurs</a>
+            
+        <div class="position-relative text-light">
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item"><img class="imgr" src="../img/admin-icon.png"
                         withd="50px" height="50px" alt=""></li>
+
                 <li class="nav-item dropdown">
 
                     <a class="nav-link dropdown-toggle" href="#"
                         id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <strong class="text-light"><%= name %> </strong>
+                        <strong class="text-light"> </strong>
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -40,4 +42,72 @@
 
         </div>
     </div>
+</nav> Navbar-->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../img/photo_projet1.png" width="50px" height="50px"
+                alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="true"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="me-3">
+                <div class="form-white input-group text-light" style="width:
+                    250px;border-radius: 20px;">
+                    <input type="search" class="form-control rounded text-light"
+                        placeholder="Gestion de Professeurs " disabled
+                        aria-label="Search" aria-describedby="search-addon" />
+                </div>
+            </form>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashbord"><i class="fas
+                            fa-tachometer-alt"></i> Dashbord</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/"><i class="bi
+                            bi-person-lines-fill"></i> Professeurs</a>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav d-flex flex-row ms-auto me-3">
+                <li class="nav-item"><img class="imgr"
+                        src="../img/admin-icon.png"
+                        withd="50px" height="50px" alt=""></li>
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle" href="#"
+                        id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <strong class="text-light"><%= name %> </strong>
+                        </a>
+
+                        <ul class="dropdown-menu"
+                            aria-labelledby="navbarDropdown">
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/logout"><i
+                                        class="fa
+                                        fa-sign-out" aria-hidden="true"></i>
+                                    LogOut</a></li>
+                        </ul>
+                    </li>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
 </nav>
+
+
+
+<!-- Navbar -->

@@ -60,41 +60,18 @@
 
   
            
-               <nav class="sb-sidenav accordion sb-sidenav-dark  cs"  style="background-color:#28a745 ;">
-                   <div class="sb-sidenav-menu ">
-                       <div class="nav ">
-                           <div class="sb-sidenav-menu-heading text-light cm col-md-12"> <strong class="text-light"> Core</strong>
-                            <a class="nav-link text-light" href="/dashbord">
-                                <div class="sb-nav-link-icon text-light"><i class="fas
-                                        fa-tachometer-alt"></i></div>
-                                        Dashbord	   
-                            </a>
-                           </div>
-                           <div class="sb-sidenav-menu-heading text-light cm col-md-12"><strong>Interface</strong></div> 
-                           <div class="sb-sidenav-menu-heading text-light cm col-md-12"> 
-                               <a class="nav-link" href="/">
-                                   <div class="sb-nav-link-icon text-light"><i class="bi bi-person-lines-fill"></i><strong class="text-light"> Professeurs</strong></div>
-                                           
-   
-                               </a>
-   
-                           </div>
-                           
-
-                       </div>
-                   </div>
-
-               </nav>
+              
            
 
-
-                <aside>
+<div id="layoutSidenav_content">
+                    <main>
+               
 
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i> DataTable
                     </div>
-                    <div style="margin-left: 100px;margin-top: 30px;" class="card-body  col-10">
+                    <div  class="card-body  col-10 m-5">
                                                 
                         <h1>edit professeur</h1>
 
@@ -102,7 +79,7 @@
 
 
                         <% rows.forEach(function(e){ %>
-                            <form class=" needs-validation " method="POST" action="/editprofesseurs/<%-e.id %>" enctype="multipart/form-data">
+                            <form class=" needs-validation" method="POST" action="/editprofesseurs/<%-e.id %>" enctype="multipart/form-data">
                                 <div class="alert alert-warning col-6">
                                     <div class="mb-3  col-10">
                                         <label class="form-label">Nom</label>
@@ -132,9 +109,11 @@
                 </div>
 
        
-        
+         </main>
 
-    </aside>
+                                </div>
+
+
 
 
 

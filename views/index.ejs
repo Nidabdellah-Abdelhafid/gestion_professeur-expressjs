@@ -37,6 +37,8 @@
 	<title>Dashbord</title>
 	<!-- vendor css -->
 	<link rel="stylesheet" href="cssd/style.css">
+	<link rel="stylesheet" href="cssd/cssdashbord.css">
+	<link rel="stylesheet" href="cssd/navBar.css">
 <style type="text/css">
         .backg {
             background-color: #f8fafb;
@@ -70,202 +72,7 @@
 
 
 
-	  html{
-    font-family: 'Open Sans',sans-serif;
-    background: whitesmoke;
-}
-a{
-    text-decoration: none;
-    color: black;
-}
-hr{
-    background: grey;
-}
-#container{
-    position: relative;
-    display: flex;
-}
-#profile{
-    flex: 15%;
-    display: block;
-    position: relative;
-    margin: 5% 2% 0 10%;
-    width: 100%;
-    height: 100%;
-}
-#info-cards{
-    flex: 55%;
-    display: block;
-    margin-top: 5%;
-    margin-right: 10%;
-    width: 100%;
-    height: 100%;
-}
-#image{
-    position: relative;
-    overflow: hidden;
-}
-#image,#profile-photo{
-    position: relative;
-    width: 270px;
-    height: 200px;
-    border-radius: 10px;
-}
-#image > a{
-    position: absolute;
-    top:0;
-    left:0;
-    background: rgba(0,0,0,0.5) !important;
-    height: 100%;
-    width: 100%;
-    display: none;
-}
-#image > a > i{
-    -webkit-text-stroke: 1px #ffffffdd;
-    padding: 40%;
-}
-#image:hover a{
-    display: block;
-}
-#name{
-    font-size: 23px !important;
-    line-height: 20px !important;
-}
-#about,.card > ul > li{
-    padding: 0 0 0 15px;
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
-#about{
-    font-size: 20px !important;
-    padding: 0 !important;
-}
-#name, #about > p{
-    font-weight: bolder;
-    font-family: 'Open Sans', sans-serif;
-}
-#email{
-    font-size: 15px !important;
-    font-weight: bold !important;
-    font-family: 'Cutive Mono',monospace;
-}
-#college,#email,#year-graduation,#education,#more-about,#telephone,#fax{
-    color: #555;
-    font-size: 13.5px;
-}
-strong,span{
-    color: black;
-    font-size: 16px;
-}
-#social-links,#about{
-    display: inline-block;
-}
-#social-links{
-    margin-bottom: 12px;
-}
-#social-links a{
-    margin: 0 10px;
-}
-#edit-intro{
-    display: block;
-    color:#097bbf;
-    font-family: 'Nunito', sans-serif;
-}
-.fab{
-    font-size: 1.1em;
-}
-.fab,.fas{
-    color: whitesmoke;
-}
-#about > a{
-    top: 4px;
-    right: 8px;
-}
-.edit{
-    top: 19px;
-    right: 10px;
-}
-#about > a, .edit{
-    position: absolute;
-    font-size: 15px !important;
-}
-.stroke-transparent {
- -webkit-text-stroke: 1px #000;
- -webkit-text-fill-color: transparent;
-}
-.blue{
-    color: #097bbf !important;
-    font-size: 13px;
-}
-.stroke-transparent-blue {
- -webkit-text-stroke: 1px #097bbf;
- -webkit-text-fill-color: transparent;
-}
-.card{
-    box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
-    overflow-x: hidden;
-    margin-bottom: 30px;
-    padding: 15px 30px 30px 30px;
-    background-color: #fff;
-}
-.card > p{
-    color: #0e141e;
-    font-weight: bolder;
-    font-size: 18px;
-    line-height: 2;
-}
-.card > p > i{
-    font-size: 18px;
-}
-.card > a{
-    font-weight: 400;
-    font-size: 15px;
-    margin: 0;
-    margin-left: 25px;
-    padding: 0;
-    border: 0;
-    height: auto;
-    background: transparent;
-    color: #097bbf;
-    outline: none;
-    cursor: pointer;
-}
-.card > ul{
-    list-style-type: none;
-}
-.tags{
-    font-size: 17px;
-    font-weight: bolder;
-}
-.tags ~ a{
-    display: none !important;
-}
-.tags span{
-    font-size: 14px;
-    font-weight: normal;
-    color: #0e141e;
-}
-.tags span span{
-    color: #738f93;
-}
-@media screen and (max-width:1090px){
-    #profile{
-        margin-left: 5%;
-    }
-}
-@media screen and (max-width:850px){
-    #container{
-        display: block;
-    }
-    #profile{
-        width: 90%;
-    }
-    .card{
-        margin: 0 5%;
-        margin-bottom: 30px;
-    }
-}
+	 
        
    </style>
    </head>
@@ -274,40 +81,17 @@ strong,span{
 
        <%- include('partials/header.ejs') %>
 
-            <div id="layoutSidenav">
-                <div id="layoutSidenav_nav">
-                    <nav class="sb-sidenav accordion sb-sidenav-dark " style="background-color:#28a745 ;"
-                        id="sidenavAccordion">
-                        <div class="sb-sidenav-menu">
-                            <div class="nav">
-                                <div class="sb-sidenav-menu-heading text-light">Core</div>
-                                <a class="nav-link text-light" href="/dashbord">
-                                    <div class="sb-nav-link-icon text-light"><i class="fas
-                                            fa-tachometer-alt"></i></div>
-                                            Dashbord	   
-                                </a>
-                                <div class="sb-sidenav-menu-heading text-light">Interface</div>
-                                <a class="nav-link" href="/">
-                                    <div class="sb-nav-link-icon text-light"><i class="bi bi-person-lines-fill"></i></div>
-                                    <strong class="text-light"> Professeurs</strong>
-                                </a>
-
-
-                            </div>
-                        </div>
-
-                    </nav>
-                </div>
+            
                 <div id="layoutSidenav_content">
                     <main>
 
 
-                        <div class="card mb-4">
+                        <div class="card  mb-4 m-5">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i> DataTable
                             </div>
-                            <div style="margin-left: 100px;margin-top: 30px;"
-                                class="card-body col-10">
+                            <div 
+                                class="card-body">
 	
 	<div class="container">
 		<div class="pcoded-wrapper">
@@ -335,7 +119,7 @@ strong,span{
 									</div>
 								</div>
 								
-								<div class="col-md-4">
+								<div class="">
 									
 								</div>
 								<div class="col-md-10 col-xl-6">
