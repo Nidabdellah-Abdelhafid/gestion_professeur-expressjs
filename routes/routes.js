@@ -10,6 +10,7 @@ const authController = require('../controllers/authController')
 
 
 router.get('', indexController.indexmethod)
+router.get('/dashbord', indexController.indexdashbord)
 
 router.get('/register',authController.getregister)
 router.post('/register',authController.register)

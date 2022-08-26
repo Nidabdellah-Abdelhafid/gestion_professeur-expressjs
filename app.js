@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const fileUpload = require("express-fileupload")
-const port = process.env.PORT || 3000 || process.env.DATABASE_URL
+const port = process.env.PORT || 3000 
 
 
 const mysql = require('mysql')
@@ -27,7 +27,7 @@ app.use(cookieParser('secret'))
 
 app.use(session({
     secret:'secret',
-    cookie:{maxAge:6000000},
+    cookie:{maxAge:800000000},
     resave:true,
     saveUninitialized:false
 }))
@@ -49,8 +49,12 @@ app.use('/images', express.static(__dirname + 'public/images'))
 app.use('/fonts', express.static(__dirname + 'public/fonts/icomoon'))
 app.use('/scss', express.static(__dirname + 'public/scss'))
 
-
-
+app.use(express.static('assets'))
+app.use('/cssd', express.static(__dirname + 'assets/cssd'))
+app.use('/jsd', express.static(__dirname + 'assets/jsd'))
+app.use('/imagesd', express.static(__dirname + 'assets/imagesd'))
+app.use('/fontsd', express.static(__dirname + 'assets/fontsd'))
+app.use('/plunginsd', express.static(__dirname + 'assets/plunginsd'))
 
 
 app.use(express.static('controllers'))

@@ -3,6 +3,32 @@ const mysql = require('mysql')
 const db = require('../database/connctionDb')
 
 
+
+
+
+exports.indexdashbord= (req, res) => {
+
+
+    if(req.session.loggedin == true){
+        db.query('SELECT count(id)as nombreProfesseurs FROM professeurs', (err, rows) => {
+            if (!err) {
+                
+                return res.render('index', { rows,name:req.session.name,nombreProfesseurs:rows[0].nombreProfesseurs })
+                
+
+            } else {
+                console.log(err)
+
+            }
+        })
+          
+    }
+    else{
+        return res.redirect('/login')
+    }
+    
+}
+
 exports.indexmethod = (req, res) => {
 
 
@@ -27,7 +53,7 @@ exports.indexmethod = (req, res) => {
 
 exports.addprofesseur = (req, res) => {
     if(req.session.loggedin == true){
-            return res.render('addprofesseurs',{name:req.session.name})
+            return res.render('/',{name:req.session.name})
         }
     else{
             return res.redirect('/login')
@@ -47,6 +73,7 @@ exports.createprofesseur = (req, res) => {
     let pathphoto;
 
     if (!req.files || Object.keys(req.files).length === 0) {
+        
         return res.status(404).send('<h1>No file uploaded</h1>')
     }
     photo = req.files.photo
@@ -107,8 +134,22 @@ exports.updateprofesseur = (req, res) => {
     let pathphoto;
 
     if (!req.files || Object.keys(req.files).length === 0) {
-        return res.status(404).send('<h1>No file uploaded</h1>')
+        photom = req.body.photo1
+
+        db.query('UPDATE professeurs SET nom=?, prenom=?, photo=? WHERE id=?', [nom, prenom, photom, req.params.id], (err, rows) => {
+
+                
+                    if (!err) {
+                        return res.redirect('/')
+
+                    } else {
+                        console.log(err)
+
+                    }
+                })
+
     }
+    else{
     photo = req.files.photo
 
     pathphoto = __dirname + '/upload/' + photo.name
@@ -118,7 +159,7 @@ exports.updateprofesseur = (req, res) => {
             db.query('UPDATE professeurs SET nom=?, prenom=?, photo=? WHERE id=?', [nom, prenom, photo.name, req.params.id], (err, rows) => {
 
                 if (!err) {
-                    res.redirect('/')
+                   return res.redirect('/')
 
                 } else {
                     console.log(err)
@@ -127,6 +168,7 @@ exports.updateprofesseur = (req, res) => {
             })
        
     })
+    }
 }
 
 
@@ -157,6 +199,7 @@ exports.viewprofesseur = (req, res) => {
 
 
 exports.deleteprofesseur = (req, res) => {
+    
     if(req.session.loggedin == true){
         db.query('DELETE FROM professeurs WHERE id=?', [req.params.id], (err) => {
             if (!err) {

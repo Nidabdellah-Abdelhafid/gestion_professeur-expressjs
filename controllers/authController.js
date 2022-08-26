@@ -55,8 +55,7 @@ exports.register =  (req, res) => {
 
     const {error} =  schema.validate(req.body)
     if(error) {
-        console.log(error)
-        console.log(error.details[0].message)
+       
         req.flash('msg',error.details[0].message)
        return res.redirect('/register')
         
@@ -125,7 +124,7 @@ exports.login =  (req, res) => {
     const {error} =  schemalog.validate(req.body)
     if(error) {
         req.flash('msg',error.details[0].message)
-        console.log(error.details[0].message)
+        
         return res.redirect('/login')
         
     }
@@ -163,7 +162,7 @@ exports.login =  (req, res) => {
                         req.session.loggedin=true
                         req.session.name=rows[0].nom
 
-                        return res.redirect('/')
+                        return res.redirect('/dashbord')
                 }
 
                 })

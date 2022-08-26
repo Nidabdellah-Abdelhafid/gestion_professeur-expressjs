@@ -52,45 +52,61 @@
         .imgr {
            border-radius: 50%;
         }
-
+        aside{
+            float: right;
+            width: 85%;
+        }
+        .cs{
+           
+            width: 15%;
+            position:absolute;
+            height: 100%;
+        }
+        .cm{
+         
+           
+          margin-left: 20px;
+          margin-bottom: 30px;
+           
+       }
         
     </style>
     </head>
 
     <body class="sb-nav-fixed">
 
-
         <%- include('partials/header.ejs') %> 
 
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark bg-success"
-                    id="sidenavAccordion">
+   
+            
+                <nav class="sb-sidenav accordion sb-sidenav-dark cs" style="background-color:#28a745;">
                     <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading text-light"> <strong class="text-light"> Core</strong>
+                        <div class="nav ">
+                            <div class="sb-sidenav-menu-heading text-light cm col-md-12"> <strong class="text-light"> Core</strong>
+                                <a class="nav-link text-light" href="/dashbord">
+                                    <div class="sb-nav-link-icon text-light"><i class="fas
+                                            fa-tachometer-alt"></i></div>
+                                            Dashbord	   
+                                </a>
                             </div>
-                            <a class="nav-link text-light" href="/">
-                                <div class="sb-nav-link-icon text-light"><i class="fas
-                                        fa-tachometer-alt"></i></div>
-
-                            </a>
-                            <div class="sb-sidenav-menu-heading text-light">Interface</div>
-                            <a class="nav-link" href="/">
-                                <div class="sb-nav-link-icon text-light"><i
-                                        class="fas fa-table "></i></div>
-                                        <strong class="text-light"> Professeurs</strong>
-
-                            </a>
-
+                            <div class="sb-sidenav-menu-heading text-light cm col-md-12"><strong>Interface</strong></div> 
+                            <div class="sb-sidenav-menu-heading text-light cm col-md-12"> 
+                                <a class="nav-link" href="/">
+                                    <div class="sb-nav-link-icon text-light"><i class="bi bi-person-lines-fill"></i><strong class="text-light"> Professeurs</strong></div>
+                                            
+    
+                                </a>
+    
+                            </div>
+                            
 
                         </div>
                     </div>
 
                 </nav>
-            </div>
-            <div id="layoutSidenav_content">
-                <main>
+            
+            
+                <aside>
 
 
                     <div class="card mb-4">
@@ -104,7 +120,7 @@
 
 
 
-                                    <div class="card text-bg-danger mb-3"
+                                    <div class="card text-bg-light mb-3"
                                         style="max-width: 18rem;">
                                         <div class="card-header">Professeur</div>
                                         <div class="card-body">
@@ -119,7 +135,7 @@
                                                     <div class="card-text">
                                                         Photo :
 
-                                                        <img src="upload/<%=
+                                                        <img src="../upload/<%=
                                                                 e.photo %>"
                                                         width="200px"
                                                         height="200px" />
@@ -133,10 +149,12 @@
                                             <% }); %>
                                             </div>
                                         </div>
-                                    </div>
-                                </main>
+                                    
+                                </aside>
+                                    
+                               
 
-                            </div>
+                            
 
 
 
