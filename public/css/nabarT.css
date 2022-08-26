@@ -15,4 +15,24 @@
     #navWidht a{
         color:black;
     }
+    #h1liste{
+        font-size:11px;
+    }
+    #btnliste{
+        font-size:10px;
+        width:auto;
+        height:auto;
+    }
+    #divpro h4{
+        font-size:16px;
+    }
+    .btnwidht{
+        width:50px;
+        font-size:11px;
+    }
+    .btnwidhtd{
+        width:54px;
+        font-size:10px;
+    }
+    
   }
