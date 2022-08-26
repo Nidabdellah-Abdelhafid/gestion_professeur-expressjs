@@ -1,45 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+	<head>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="description" content="Flash Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-	<meta name="keywords"
-		content="admin templates, bootstrap admin templates, bootstrap 4, dashboard, dashboard templets, sass admin templets, html admin templates, responsive, bootstrap admin templates free download,premium bootstrap admin templates, Flash Able, Flash Able bootstrap admin template">
-	<meta name="author" content="Codedthemes" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,
+			user-scalable=0, minimal-ui">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Flash Able Bootstrap admin template made
+			using Bootstrap 4 and it has huge amount of ready made feature, UI
+			components, pages which completely fulfills any dashboard needs." />
+		<meta name="keywords"
+			content="admin templates, bootstrap admin templates, bootstrap 4, dashboard,
+			dashboard templets, sass admin templets, html admin templates, responsive,
+			bootstrap admin templates free download,premium bootstrap admin templates,
+			Flash Able, Flash Able bootstrap admin template">
+		<meta name="author" content="Codedthemes" />
 
-	<!-- Favicon icon -->
-	
-	<!-- fontawesome icon -->
-	<link rel="stylesheet" href="fontsd/fontawesome/css/fontawesome-all.min.css">
-	<!-- animation css -->
-	<link rel="stylesheet" href="pluginsd/animation/css/animate.min.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+		<!-- Favicon icon -->
+
+		<!-- fontawesome icon -->
+		<link rel="stylesheet" href="fontsd/fontawesome/css/fontawesome-all.min.css">
+		<!-- animation css -->
+		<link rel="stylesheet" href="pluginsd/animation/css/animate.min.css">
+		<link rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+		<!-- CSS only -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+			crossorigin="anonymous">
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+			/>
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-	<title>Dashbord</title>
-	<!-- vendor css -->
-	<link rel="stylesheet" href="cssd/style.css">
-	<link rel="stylesheet" href="cssd/cssdashbord.css">
-	<link rel="stylesheet" href="cssd/navBar.css">
-<style type="text/css">
+		<link
+			href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+			rel="stylesheet" />
+		<link href="css/styles.css" rel="stylesheet" />
+		<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+			crossorigin="anonymous"></script>
+		<title>Dashbord</title>
+		<!-- vendor css -->
+		<link rel="stylesheet" href="cssd/style.css">
+		<link rel="stylesheet" href="cssd/cssdashbord.css">
+		<link rel="stylesheet" href="cssd/navBar.css">
+		<link rel="stylesheet" href="css/nabarT.css">
+		<style type="text/css">
         .backg {
             background-color: #f8fafb;
          }
@@ -63,286 +81,298 @@
          margin-bottom: 30px;
           
       }
-      
-
-
-
-
-
-
 
 
 	 
        
    </style>
-   </head>
+	</head>
 
-   <body class="sb-nav-fixed">
-
-       <%- include('partials/header.ejs') %>
-
-            
-                <div id="layoutSidenav_content">
-                    <main>
+	<body class="sb-nav-fixed">
 
 
-                        <div class="card  mb-4 m-5">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i> DataTable
-                            </div>
-                            <div 
-                                class="card-body">
-	
-	<div class="container">
-		<div class="pcoded-wrapper">
-			<div class="pcoded-content">
-				<div class="pcoded-inner-content">
-					<div class="main-body">
-						<div class="page-wrapper">
+		<%- include('partials/header.ejs') %>
+		<%- include('partials/navwidth.ejs') %>
+		
+			<div id="layoutSidenav_content">
+				<main>
+
+
+					<div class="card">
+						<div class="card-header">
+							<i class="fas fa-table me-1"></i> DataTable
+						</div>
+						<div class="card-body">
+
 							
-							<div class="row">
+													<div class="row">
 
-								<!-- product profit start -->
-								<div class="col-xl-5 col-md-6">
-									<div class="card prod-p-card bg-c-green">
-										<div class="card-body">
-											<div class="row align-items-center m-b-25">
-												<div class="col">
-													<h6 class="m-b-5 text-white">Nombre des professeurs</h6>
-													
-													<h3 class="m-b-0 text-white"><%= nombreProfesseurs %> </h3>
-													
-												</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="">
-									
-								</div>
-								<div class="col-md-10 col-xl-6">
-									<div class="card user-card">
-										<div class="card-header">
-											<h5>Objective</h5>
-										</div>
-										<div class="card-body  text-center">
-											
-											<p class="m-t-15">Objective de ce site est de faire une gestion de professeur ajouter,modifier,voir ou supprimer les informations de chaque professeur</p>
-											 <!-- Button trigger modal -->
-											 <button
-											 type="button"
-											 class="btn
-											 btn-info "
-											 data-toggle="modal"
-											 data-target="#exampleModalCenterl"
-											 
-											 >
-											
-											 Voir le CV de Nidabdellah Abdelhafid
-										 </button>
-										 <!-- Modal -->
-										 <div
-											 class="modal
-											 fade"
-											 id="exampleModalCenterl"
-											 role="dialog"
-											 aria-hidden="true">
-											 <div
-												 class="modal-dialog modal-xl
-												 modal-dialog-centered"
-												 role="document">
-												 <div
-													 class="modal-content">
-													 <div
-														 class="modal-body">
-														
-															<div id="inner-nav"></div>
-															<div id="container">
-																<div id="profile">
-																	<div id="image">
-																		<img id="profile-photo" src="img/nidabdellah_abdelhafid.jpg" width="210px" height="200px" alt="Profile-Image">
-																		<a href="#"><i class="fas fa-pen stroke-transparent"></i></a>
-																	</div>
-																	<p id="name" class="mt-2">Nidabdellah Abdelhafid<br></p>
-																	<p id="designation">Address<br><span id="college">Casablanca , Maroc</span></p>
-																	<div id="social-links"><a href="https://web.facebook.com/hafid.nid.77"><i class="fab fa-facebook-f stroke-transparent"></i></a><a href="https://www.linkedin.com/in/abdelhafid-nidabdellah-7977b7229"><i class="fab fa-linkedin-in stroke-transparent"></i></a><a href="https://github.com/Nidabdellah-Abdelhafid?tab=repositories"><i class="fab fa-github stroke-transparent"></i></a></div>
-																	
-																	<hr width="100%">
-																	<div id="about">
-																		<p style="display:inline;">Contact</p>
-																		
-																	</div>
-																	<p id="">Email <i class="bi bi-envelope"></i><br><strong><a href="mailto:nidabdellahabdelhafid99@gmail.com">nidabdellahabdelhafid99@gmail.com</a></strong></p>
-																	<p id="telephone">Telephone<br><strong>0681704816</strong></p>
-																	<p id="education">Language<br><strong>Englais<br>Français<br>Arabe <br>Amazigh </strong></p>
-																	<p id="more-about">Activité<br><span>Sport (football)</span></p>
-																	
-																	
-																</div>
-																<div id="info-cards">
-																	
-																	<div class="card">
-																		<p><i class="fas fa-graduation-cap stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Education</p>
-																		<ul>
-																			<li><p class="tags">École nationale des sciences appliquées d'el jadida<br><span>Cycle ingénieur en génie informatique et technologies
-																				émergentes | <span>2021 - 2022</span></span></p>
-																				<a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
-																			<li><p class="tags">École nationale des sciences appliquées d'el jadida<br><span>Deux années préparatoires | <span>2019 - 2021</span></span></p>
-																				<a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
-																			<li><p class="tags">Lycée MOHAMMED 6<br><span>Baccalauréat Science mathématiques | <span>2018 - 2019</span></span></p>
-																				<a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
-																		</ul>
-																		
-																	</div>
+														<!-- product profit start -->
+														<div class="col-md-5">
+															<div class="card prod-p-card bg-c-green">
+																<div class="card-body">
+																	<div class="row align-items-center m-b-25">
+																		<div class="col">
+																			<h6 class="m-b-5 text-white">Nombre des professeurs</h6>
 
-																	<div class="card">
-																		<p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Projets</p>
-																		<ul>
-																			<li><p class="tags">Développement d'une application d'évaluation, de visualisation et de communication des risques COVID-19<br><span>Php laravel </span></p>
-																				<a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
-																			<li><p class="tags">MULTIPLATEFORME DE GÉSTION DE VÉHICULE/TRACKER/POSITION<br><span>WEB: Expressjs <br> <span>MOBILE: Flutter</span></span></p>
-																				<a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
-																			<li><p class="tags">GESTIONNAIRE DES DOSSIERS DES PROFESSEURS<br><span>Langages:LARAVEL/PHP/Bootstrap/HTML5/CSS3/Javascript <br> <span>SGBD:Mysql</span></span></p>
-																				<a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
-																			</ul>
-																		
-																	</div>
-																	<div class="card">
-																		<p><i class="bi bi-tools"></i>&nbsp;&nbsp;&nbsp;Competences</p>
-																		<ul>
-																			<li><p class="tags">LANGAGES DE PROGRAMMATION<br><span><span>C/C++,JAVA,PYTHON,PHP,JAVASCRIPT ,SQL</span></span></p>
-																				<a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
-																			<li><p class="tags">PROGRAMMATION WEB<br><span><span>HTML,CSS,BOOTSTRAP,JAVASCRIPT, PHP, PHPLaravel,NODEJS/EXPRESSJS</span></span></p>
-																				<a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
-																			<li><p class="tags">PROGRAMMATION MOBILE<br><span><br> <span>Android studio,Dart,Flutter</span></span></p>
-																				<a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
-																			<li><p class="tags">BASES DE DONNEES<br><span><br> <span>Oracle,Mysql</span></span></p>
-																				<a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
-																			<li><p class="tags">CONCEPTION<br><span><br> <span>MERISE,UML</span></span></p>
-																				<a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
-																			<li><p class="tags">OUTILS<br><span><br> <span>PowerAMC,Matlab</span></span></p>
-																				<a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
-																	
-																			</ul>
-																		
+																			<h3 class="m-b-0 text-white"><%= nombreProfesseurs %> </h3>
+																			</div>
+
+																		</div>
 																	</div>
 																</div>
 															</div>
-													 </div>
-													 <div
-														 class="modal-footer">
-														 <button
-															 type="button"
-															 class="btn
-															 btn-secondary"
-															 data-dismiss="modal">OK</button>
-														 
-													 </div>
-												 </div>
-											 </div>
-										 </div>
-										 <!-- /Modal -->
-										</div>
-									</div>
-								</div>
-								<!-- sessions-section end -->
-								<div class="col-md-8 col-xl-6">
-									<div class="card user-card">
-										<div class="card-header">
-											<h5>Profile</h5>
-										</div>
-										<div class="card-body  text-center">
-											<div class="usre-image">
-												<img src="img/nidabdellah_abdelhafid.jpg" class="imgr m-auto" width="130px" height="130px" alt="User-Profile-Image">
-											</div>
-											<h6 class="f-w-600 m-t-25 m-b-10">Nidabdellah Abdelhafid</h6>
-											<p>Active | Male | Email <a href="mailto:nidabdellahabdelhafid99@gmail.com"><i class="bi bi-envelope"></i>nidabdellahabdelhafid99@gmail.com</a></p>
-											<hr>
-											<p class="m-t-15"></p>
-											<div class="bg-c-blue counter-block m-t-10 p-20">
-												<div class="row">
-													<div class="col-4">
-														<i class="fas fa-calendar-check text-white f-20"></i>
-														
-													</div>
-													<div class="col-4">
-														<i class="fas fa-user text-white f-20"></i>
-														
-													</div>
-													<div class="col-4">
-														<i class="fas fa-folder-open text-white f-20"></i>
-														
+
+															<div class="">
+
+															</div>
+															<div class="col-md-6">
+																<div class="card user-card">
+																	<div class="card-header">
+																		<h5>Objective</h5>
+																	</div>
+																	<div class="card-body text-center">
+
+																		<p class="m-t-15">Objective de ce site est de faire une
+																			gestion de professeur ajouter,modifier,voir ou supprimer les
+																			informations de chaque professeur</p>
+																		<!-- Button trigger modal -->
+																		<button
+																			type="button"
+																			class="btn
+																			btn-info "
+																			data-toggle="modal"
+																			data-target="#exampleModalCenterl">
+
+																			Voir le CV de Nidabdellah Abdelhafid
+																		</button>
+																		<!-- Modal -->
+																		<div
+																			class="modal
+																			fade"
+																			id="exampleModalCenterl"
+																			role="dialog"
+																			aria-hidden="true">
+																			<div
+																				class="modal-dialog modal-xl
+																				modal-dialog-centered"
+																				role="document">
+																				<div
+																					class="modal-content">
+																					<div
+																						class="modal-body">
+
+																						<div id="inner-nav"></div>
+																						<div id="container">
+																							<div id="profile">
+																								<div id="image">
+																									<img id="profile-photo"
+																										src="img/nidabdellah_abdelhafid.jpg" width="210px"
+																										height="200px" alt="Profile-Image">
+																									<a href="#"><i class="fas fa-pen stroke-transparent"></i></a>
+																								</div>
+																								<p id="name" class="mt-2">Nidabdellah Abdelhafid<br></p>
+																								<p id="designation">Address<br><span id="college">Casablanca
+																										, Maroc</span></p>
+																								<div id="social-links"><a
+																										href="https://web.facebook.com/hafid.nid.77"><i
+																											class="fab fa-facebook-f stroke-transparent"></i></a><a
+																										href="https://www.linkedin.com/in/abdelhafid-nidabdellah-7977b7229"><i
+																											class="fab fa-linkedin-in stroke-transparent"></i></a><a
+																										href="https://github.com/Nidabdellah-Abdelhafid?tab=repositories"><i
+																											class="fab fa-github stroke-transparent"></i></a></div>
+																								<hr width="100%">
+																								<div id="about">
+																									<p style="display:inline;">Contact</p>
+
+																								</div>
+																								<p id="">Email <i class="bi bi-envelope"></i><br><strong><a
+																											href="mailto:nidabdellahabdelhafid99@gmail.com">nidabdellahabdelhafid99@gmail.com</a></strong></p>
+																								<p id="telephone">Telephone<br><strong>0681704816</strong></p>
+																								<p id="education">Language<br><strong>Englais<br>Français<br>Arabe
+																										<br>Amazigh </strong></p>
+																								<p id="more-about">Activité<br><span>Sport (football)</span></p>
+																							</div>
+																							<div id="info-cards">
+
+																								<div class="card">
+																									<p><i class="fas fa-graduation-cap stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Education</p>
+																									<ul>
+																										<li><p class="tags">École nationale des sciences
+																												appliquées d'el jadida<br><span>Cycle ingénieur en
+																													génie informatique et technologies
+																													émergentes | <span>2021 - 2022</span></span></p>
+																											<a class="edit" href="#"><i class="fas fa-pen
+																													stroke-transparent-blue"></i></a></li>
+																										<li><p class="tags">École nationale des sciences
+																												appliquées d'el jadida<br><span>Deux années
+																													préparatoires | <span>2019 - 2021</span></span></p>
+																											<a class="edit" href="#"><i class="fas fa-pen
+																													stroke-transparent-blue"></i></a></li>
+																										<li><p class="tags">Lycée MOHAMMED 6<br><span>Baccalauréat
+																													Science mathématiques | <span>2018 - 2019</span></span></p>
+																											<a class="edit" href="#"><i class="fas fa-pen
+																													stroke-transparent-blue"></i></a></li>
+																									</ul>
+
+																								</div>
+
+																								<div class="card">
+																									<p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Projets</p>
+																									<ul>
+																										<li><p class="tags">Développement d'une application
+																												d'évaluation, de visualisation et de communication
+																												des risques COVID-19<br><span>Php laravel </span></p>
+																											<a class="edit" href="#"><i class="fas fa-pen
+																													stroke-transparent-blue"></i></a></li>
+																										<li><p class="tags">MULTIPLATEFORME DE GÉSTION DE
+																												VÉHICULE/TRACKER/POSITION<br><span>WEB: Expressjs
+																													<br> <span>MOBILE: Flutter</span></span></p>
+																											<a class="edit" href="#"><i class="fas fa-pen
+																													stroke-transparent-blue"></i></a></li>
+																										<li><p class="tags">GESTIONNAIRE DES DOSSIERS DES
+																												PROFESSEURS<br><span>Langages:LARAVEL/PHP/Bootstrap/HTML5/CSS3/Javascript
+																													<br> <span>SGBD:Mysql</span></span></p>
+																											<a class="edit" href="#"><i class="fas fa-pen
+																													stroke-transparent-blue"></i></a></li>
+																									</ul>
+
+																								</div>
+																								<div class="card">
+																									<p><i class="bi bi-tools"></i>&nbsp;&nbsp;&nbsp;Competences</p>
+																									<ul>
+																										<li><p class="tags">LANGAGES DE PROGRAMMATION<br><span><span>C/C++,JAVA,PYTHON,PHP,JAVASCRIPT
+																														,SQL</span></span></p>
+																											<a class="edit" href="#"><i class="fas fa-pen
+																													stroke-transparent-blue"></i></a></li>
+																										<li><p class="tags">PROGRAMMATION WEB<br><span><span>HTML,CSS,BOOTSTRAP,JAVASCRIPT,
+																														PHP, PHPLaravel,NODEJS/EXPRESSJS</span></span></p>
+																											<a class="edit" href="#"><i class="fas fa-pen
+																													stroke-transparent-blue"></i></a></li>
+																										<li><p class="tags">PROGRAMMATION MOBILE<br><span><br>
+																													<span>Android studio,Dart,Flutter</span></span></p>
+																											<a class="edit" href="#"><i class="fas fa-pen
+																													stroke-transparent-blue"></i></a></li>
+																										<li><p class="tags">BASES DE DONNEES<br><span><br>
+																													<span>Oracle,Mysql</span></span></p>
+																											<a class="edit" href="#"><i class="fas fa-pen
+																													stroke-transparent-blue"></i></a></li>
+																										<li><p class="tags">CONCEPTION<br><span><br> <span>MERISE,UML</span></span></p>
+																											<a class="edit" href="#"><i class="fas fa-pen
+																													stroke-transparent-blue"></i></a></li>
+																										<li><p class="tags">OUTILS<br><span><br> <span>PowerAMC,Matlab</span></span></p>
+																											<a class="edit" href="#"><i class="fas fa-pen
+																													stroke-transparent-blue"></i></a></li>
+
+																									</ul>
+
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div
+																						class="modal-footer">
+																						<button
+																							type="button"
+																							class="btn
+																							btn-secondary"
+																							data-dismiss="modal">OK</button>
+
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<!-- /Modal -->
+																	</div>
+																</div>
+															</div>
+															<!-- sessions-section end -->
+															<div class="col-md-6 ">
+																<div class="card user-card">
+																	<div class="card-header">
+																		<h5>Profile</h5>
+																	</div>
+																	<div class="card-body text-center">
+																		<div class="usre-image">
+																			<img src="img/nidabdellah_abdelhafid.jpg" class="imgr m-auto"
+																				width="130px" height="130px" alt="User-Profile-Image">
+																		</div>
+																		<h6 class="f-w-600 m-t-25 m-b-10">Nidabdellah Abdelhafid</h6>
+																		<p>Active | Male | Email <a
+																				href="mailto:nidabdellahabdelhafid99@gmail.com"><i class="bi
+																					bi-envelope"></i> nidabdellahabdelhafid99@gmail.com</a></p>
+																		<hr>
+																		<p class="m-t-15"></p>
+																		<div class="bg-c-blue counter-block m-t-10 p-20">
+																			<div class="row">
+																				<div class="col-4">
+																					<i class="fas fa-calendar-check text-white f-20"></i>
+																				</div>
+																				<div class="col-4">
+																					<i class="fas fa-user text-white f-20"></i>
+
+																				</div>
+																				<div class="col-4">
+																					<i class="fas fa-folder-open text-white f-20"></i>
+
+																				</div>
+																			</div>
+																		</div>
+																		<p class="m-t-15"></p>
+																		<hr>
+																		<div class="row justify-content-center user-social-link">
+																			<div class="col-auto"><a
+																					href="https://web.facebook.com/hafid.nid.77"><i class="fab
+																						fa-facebook-f text-primary f-22"></i></a></div>
+																			<div class="col-auto"><a
+																					href="https://www.linkedin.com/in/abdelhafid-nidabdellah-7977b7229"><i
+																						class="bi bi-linkedin"></i></a></div>
+																			<div class="col-auto"><a
+																					href="https://github.com/Nidabdellah-Abdelhafid?tab=repositories"><i
+																						class="fab fa-github stroke-transparent"></i></a></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+
 													</div>
 												</div>
-											</div>
-											<p class="m-t-15"></p>
-											<hr>
-											<div class="row justify-content-center user-social-link">
-												<div class="col-auto"><a href="https://web.facebook.com/hafid.nid.77"><i class="fab fa-facebook-f text-primary f-22"></i></a></div>
-												<div class="col-auto"><a href="https://www.linkedin.com/in/abdelhafid-nidabdellah-7977b7229"><i class="bi bi-linkedin"></i></a></div>
-												<div class="col-auto"><a href="https://github.com/Nidabdellah-Abdelhafid?tab=repositories"><i class="fab fa-github stroke-transparent"></i></a></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+											
+								
 
-							
-						</div>
-					</div>
+
+
+
+					</main>
+
 				</div>
-			</div>
-		</div>
-	</div>
-	    
-
-    </div>
 
 
 
 
 
 
+				<script
+					src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+					crossorigin="anonymous"></script>
+				<script src="js/scripts.js"></script>
+				<script
+					src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+					crossorigin="anonymous"></script>
 
-
-                                        </div>
-
-
-
-                                    </main>
-
-                                </div>
-
-
-
-
-
+				<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
+					crossorigin="anonymous"></script>
+				<script src="js/datatables-simple-demo.js"></script>
 
 
 
+				<!-- Required Js -->
+				<script src="jsd/vendor-all.min.js"></script>
+				<script src="pluginsd/bootstrap/js/bootstrap.min.js"></script>
 
 
+			</body>
 
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="js/datatables-simple-demo.js"></script>
-
-	
-
-	<!-- Required Js -->
-	<script src="jsd/vendor-all.min.js"></script>
-	<script src="pluginsd/bootstrap/js/bootstrap.min.js"></script>
-	
-
-</body>
-
-</html>
+		</html>
