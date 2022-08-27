@@ -52,7 +52,10 @@
         
     }
     #navWidht a{
-       margin:0;
+       margin-left:0;
+       margin-right:0;
+       margin-top:10px;
+       margin-bottom:2px;
        padding: 0;
     }
   }
