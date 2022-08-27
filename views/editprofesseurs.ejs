@@ -51,7 +51,25 @@
           
       }
       
-       
+      #navWidht{
+    visibility: hidden;
+    height:0px;
+}
+@media only screen and (min-width:200px) and (max-width:993px) {
+    #navWidht{
+        visibility: visible;
+        height:auto;
+        text-align:center;
+        background-color:white; 
+        width:auto;
+    }
+    #navWidht a{
+        color:black;
+    }
+    #h1liste{
+        font-size:11px;
+    }
+  }
    </style>
    </head>
 
@@ -74,23 +92,23 @@
                     </div>
                     <div  class="card-body  col-10 m-5">
                                                 
-                        <h1>edit professeur</h1>
+                        <h1>edit professeur <i class="bi bi-tools"></i></h1>
 
 
 
 
                         <% rows.forEach(function(e){ %>
                             <form class="needs-validation" method="POST" action="/editprofesseurs/<%-e.id %>" enctype="multipart/form-data">
-                                <div class="alert alert-warning col-md-10" id="editwidht">
-                                    <div class="mb-3  col-10">
+                                <div class="alert alert-warning col-md-8" id="editwidht">
+                                    <div class="mb-3  col-8">
                                         <label class="form-label">Nom</label>
                                         <input type="text" class="form-control" value="<%- e.nom %>" name="nom">
                                     </div>
-                                    <div class="mb-3 col-10">
+                                    <div class="mb-3 col-8">
                                         <label for class="form-label">Prenom</label>
                                         <input type="text" class="form-control" value="<%- e.prenom %>" name="prenom">
                                     </div>
-                                    <div class="mb-3 col-10">
+                                    <div class="mb-3 col-8">
                                         <label class="form-label">Photo</label>
                                         <input type="File" class="form-control" name="photo" accept="image/*" />
                                         <input type="hidden" value="<%= e.photo %>" class="form-control" name="photo1" />
