@@ -10,9 +10,11 @@
         text-align:center;
         background-color:white; 
         width:auto;
+        
     }
     #navWidht a{
         color:black;
+        font-size:14px;
     }
     #h1liste{
         font-size:11px;
@@ -37,4 +39,20 @@
         width:auto;
     }
     
+  }
+
+  @media only screen and (min-width:200px) and (max-width:400px) {
+    #navWidht{
+
+        visibility: visible;
+        height:auto;
+        text-align:left;
+        background-color:white; 
+        width:auto;
+        
+    }
+    #navWidht a{
+       margin:0;
+       padding: 0;
+    }
   }
