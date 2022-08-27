@@ -8,8 +8,7 @@
         visibility: visible;
         height:auto;
         text-align:center;
-        background-color:white;
-        
+        background-color:white; 
         width:auto;
     }
     #navWidht a{
@@ -33,6 +32,9 @@
     .btnwidhtd{
         width:54px;
         font-size:10px;
+    }
+    #editwidht{
+        width:auto;
     }
     
   }

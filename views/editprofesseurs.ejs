@@ -80,8 +80,8 @@
 
 
                         <% rows.forEach(function(e){ %>
-                            <form class=" needs-validation" method="POST" action="/editprofesseurs/<%-e.id %>" enctype="multipart/form-data">
-                                <div class="alert alert-warning col-6">
+                            <form class="needs-validation" method="POST" action="/editprofesseurs/<%-e.id %>" enctype="multipart/form-data">
+                                <div class="alert alert-warning col-md-10" id="editwidht">
                                     <div class="mb-3  col-10">
                                         <label class="form-label">Nom</label>
                                         <input type="text" class="form-control" value="<%- e.nom %>" name="nom">
