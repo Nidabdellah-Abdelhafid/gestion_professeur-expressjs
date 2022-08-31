@@ -4,10 +4,7 @@ const db = require('../database/connctionDb')
 
 
 
-
-
 exports.indexdashbord= (req, res) => {
-
 
     if(req.session.loggedin == true){
         db.query('SELECT count(id)as nombreProfesseurs FROM professeurs', (err, rows) => {
@@ -29,13 +26,59 @@ exports.indexdashbord= (req, res) => {
     
 }
 
+
+
 exports.indexmethod = (req, res) => {
-
-
+   
     if(req.session.loggedin == true){
         db.query('SELECT * FROM professeurs', (err, rows) => {
             if (!err) {
-                return res.render('listprofesseurs', { rows,name:req.session.name })
+                db.query('SELECT * FROM filières', (err, rows1) => {
+                    if (!err) {
+                        
+                        return res.render('listprofesseurs', {rows,rows1,name:req.session.name })
+        
+                    } else {
+                        console.log(err)
+        
+                    }
+                })
+
+            } else {
+                console.log(err)
+
+            }
+        })
+          
+    }
+    else{
+        return res.redirect('/login')
+    }
+    
+}
+
+
+
+exports.indexmethodfind = (req, res) => {
+    const {
+        searchbar
+    } = req.body;
+
+    if(req.session.loggedin == true){
+        db.query('SELECT * FROM `professeurs` WHERE nom like "%'+searchbar+'%" or prenom like "%'+searchbar+'%";', (err, rows) => {
+            if (!err) {
+                db.query('SELECT * FROM filières', (err, rows1) => {
+                    if (!err) {
+                        
+                        
+                        console.log(rows)
+                        return res.render('listprofesseurs', { rows,rows1,name:req.session.name })
+        
+                    } else {
+                        console.log(err)
+        
+                    }
+                })
 
             } else {
                 console.log(err)
@@ -62,11 +105,11 @@ exports.addprofesseur = (req, res) => {
 
 
 
-
 exports.createprofesseur = (req, res) => {
     const {
         nom,
-        prenom
+        prenom,
+        libelle
     } = req.body;
 
     let photo;
@@ -83,7 +126,7 @@ exports.createprofesseur = (req, res) => {
         if (err) return res.status(500).send(err)
 
 
-            db.query('INSERT INTO professeurs SET nom=?, prenom=?, photo=?', [nom, prenom, photo.name], (err, rows) => {
+            db.query('INSERT INTO professeurs SET nom=?, prenom=?,libellé=?, photo=?', [nom, prenom,libelle, photo.name], (err, rows) => {
 
                
                 if (!err) {
@@ -100,13 +143,25 @@ exports.createprofesseur = (req, res) => {
 
 
 
-
 exports.editprofesseur = (req, res) => {
      if(req.session.loggedin == true){
         db.query('SELECT * FROM professeurs WHERE id=?', [req.params.id], (err, rows) => {
 
             if (!err) {
-                return res.render('editprofesseurs', { rows,name:req.session.name })
+
+                db.query('SELECT * FROM filières', (err, rows1) => {
+
+                    if (!err) {
+                        return res.render('editprofesseurs', { rows1,rows,name:req.session.name })
+        
+        
+                    } else {
+                        console.log(err)
+        
+                    }
+               
+            })
+               
 
 
             } else {
@@ -115,6 +170,8 @@ exports.editprofesseur = (req, res) => {
             }
        
     })
+
+    
     }
     else{
             return res.redirect('/login')
@@ -123,11 +180,11 @@ exports.editprofesseur = (req, res) => {
 
 
 
-
 exports.updateprofesseur = (req, res) => {
     const {
         nom,
-        prenom
+        prenom,
+        libelle
     } = req.body;
 
     let photo;
@@ -136,7 +193,7 @@ exports.updateprofesseur = (req, res) => {
     if (!req.files || Object.keys(req.files).length === 0) {
         photom = req.body.photo1
 
-        db.query('UPDATE professeurs SET nom=?, prenom=?, photo=? WHERE id=?', [nom, prenom, photom, req.params.id], (err, rows) => {
+        db.query('UPDATE professeurs SET nom=?, prenom=?,libellé=?, photo=? WHERE id=?', [nom, prenom,libelle, photom, req.params.id], (err, rows) => {
 
                 
                     if (!err) {
@@ -150,13 +207,14 @@ exports.updateprofesseur = (req, res) => {
 
     }
     else{
+
     photo = req.files.photo
 
     pathphoto = __dirname + '/upload/' + photo.name
     photo.mv(pathphoto, function(err) {
         if (err) return res.status(500).send(err)
 
-            db.query('UPDATE professeurs SET nom=?, prenom=?, photo=? WHERE id=?', [nom, prenom, photo.name, req.params.id], (err, rows) => {
+            db.query('UPDATE professeurs SET nom=?, prenom=?,libellé=?, photo=? WHERE id=?', [nom, prenom,libelle, photo.name, req.params.id], (err, rows) => {
 
                 if (!err) {
                    return res.redirect('/')
@@ -216,3 +274,4 @@ exports.deleteprofesseur = (req, res) => {
             return res.redirect('/login')
     }
 }
+

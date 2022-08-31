@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+        <!-- CSS only -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous">
+
+
+
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+            rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+            crossorigin="anonymous"></script>
+
+        <title>Liste filiere</title>
+        <link rel="stylesheet" href="css/nabarT.css">
+        <style type="text/css">
+        .backg {
+            background-color: #f8fafb;
+         }
+         .imgr {
+            border-radius: 50%;
+         }
+         aside{
+            float: right;
+            width: 85%;
+        }
+        .cs{
+           
+            width: 15%;
+             position:absolute;
+             height: 100%;
+         }
+         .cm{
+         
+           
+         margin-left: 20px;
+         margin-bottom: 30px;
+          
+      }
+      
+      #navWidht{
+    visibility: hidden;
+    height:0px;
+}
+@media only screen and (min-width:200px) and (max-width:993px) {
+    #navWidht{
+        visibility: visible;
+        height:auto;
+        text-align:center;
+        background-color:white; 
+        width:auto;
+    }
+    #navWidht a{
+        color:black;
+    }
+    #h1liste{
+        font-size:11px;
+    }
+  }
+   </style>
+    </head>
+
+    <body class="sb-nav-fixed">
+
+        <%- include('partials/header.ejs') %>
+
+            <%- include('partials/navwidth.ejs') %>
+
+
+
+
+                <div id="layoutSidenav_content">
+                    <main>
+
+
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i> DataTable
+                            </div>
+                            <div class="card-body col-10 m-5">
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h1> Liste Filiere <i class="bi
+                                                bi-card-list "></i></h1>
+                                    </div>
+                                    <div class="col-6 d-flex
+                                        justify-content-end">
+                                        
+
+
+                                            <button id="btnliste"
+                                            type="button" class="btn btn-info"
+                                            data-toggle="modal"
+                                            data-target="#exampleModalCenteraddf"
+                                            >
+                                            <i class="bi bi-plus-circle-fill"></i>
+                                            Add filiere
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="alert">
+                                    <table class="table table-bordered
+                                        alert-warning ">
+                                        <thead class=" bg-warning ">
+                                            <tr>
+                                                <th scope="col ">#</th>
+                                                <th scope="col ">Libellé</th>
+                                                <th scope="col ">Edit</th>
+                                                <th scope="col ">Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% rows.forEach(function(e){ %>
+                                                <tr>
+                                                    <th scope="row ">
+                                                        <%= e.id %>
+                                                        </th>
+                                                        <td>
+                                                            <%= e.libellé %>
+                                                            </td>
+
+
+
+                                                            <td>
+                                                                <a
+                                                                    href="/editfiliere/<%=
+                                                                    e.id %>"
+                                                                    type="button"
+                                                                    class="btn
+                                                                    btn-warning
+                                                                    btn-small">
+                                                                    <i class="bi
+                                                                        bi-pencil"></i>edit</a>
+                                                            </td>
+                                                            <td>
+                                                                <a
+                                                                    href="/indexfiliere/<%=
+                                                                    e.id %>"
+                                                                    type="button"
+                                                                    class="btn
+                                                                    btn-danger
+                                                                    btn-small">
+                                                                    <i class="bi
+                                                                        bi-clipboard-x-fill"></i>delete</a>
+                                                            </td>
+                                                        </tr>
+                                                        <% }); %>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </main>
+
+                                </div>
+
+
+
+
+
+
+
+
+                                <!-- Modal -->
+                                <div
+                                    class="modal
+                                    fade"
+                                    id="exampleModalCenteraddf"
+
+                                    role="dialog"
+                                    aria-labelledby="exampleModalCenterTitle"
+                                    aria-hidden="true">
+                                    <div
+                                        class="modal-dialog
+                                        modal-dialog-centered"
+                                        role="document">
+                                        <div
+                                            class="modal-content">
+                                            <div
+                                                class="modal-body">
+                                                <form class="needs-validation "
+                                                    method="POST"
+                                                    action="/addfiliere"
+                                                    novalidate>
+                                                    <div class="alert
+                                                        alert-warning col-10">
+                                                        <div class="mb-3
+                                                            col-10">
+                                                            <label
+                                                                class="form-label">Libellé</label>
+                                                            <input type="text"
+                                                                class="form-control"
+                                                                name="libellé">
+                                                        </div>
+
+                                                        <button type="submit"
+                                                            class="btn
+                                                            btn-primary">Add
+                                                            filiere</button>
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /Modal -->
+
+
+
+
+
+
+
+
+
+
+                                    <script
+                                        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                                        crossorigin="anonymous"></script>
+                                    <script src="js/scripts.js"></script>
+                                    <script
+                                        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+                                        crossorigin="anonymous"></script>
+                                    <script
+                                        src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
+                                        crossorigin="anonymous"></script>
+                                    <script src="js/datatables-simple-demo.js"></script>
+                                </body>
+
+                            </html>

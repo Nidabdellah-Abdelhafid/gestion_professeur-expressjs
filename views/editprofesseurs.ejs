@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+        <!-- CSS only -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous">
 
 
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
-    <title>Edit professeur</title>
-    <link rel="stylesheet" href="css/nabarT.css">
-    <style type="text/css">
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+            rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+            crossorigin="anonymous"></script>
+
+        <title>Edit professeur</title>
+        <link rel="stylesheet" href="css/nabarT.css">
+        <style type="text/css">
         .backg {
             background-color: #f8fafb;
          }
@@ -71,66 +79,106 @@
     }
   }
    </style>
-   </head>
+    </head>
 
-   <body class="sb-nav-fixed">
+    <body class="sb-nav-fixed">
 
-       <%- include('partials/header.ejs') %> 
+        <%- include('partials/header.ejs') %>
 
-       <%- include('partials/navwidth.ejs') %>
-           
-              
-           
+            <%- include('partials/navwidth.ejs') %>
 
-<div id="layoutSidenav_content">
+
+
+
+                <div id="layoutSidenav_content">
                     <main>
-               
-
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-table me-1"></i> DataTable
-                    </div>
-                    <div  class="card-body  col-10 m-5">
-                                                
-                        <h1>edit professeur <i class="bi bi-tools"></i></h1>
 
 
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i> DataTable
+                            </div>
+                            <div class="card-body col-10 m-5">
+
+                                <h1>edit professeur <i class="bi bi-tools"></i></h1>
+                                <% rows.forEach(function(e){ %>
+                                    <form class="needs-validation" method="POST"
+                                        action="/editprofesseurs/<%-e.id %>"
+                                        enctype="multipart/form-data">
+                                        <div class="alert alert-warning
+                                            col-md-8" id="editwidht">
+                                            <div class="mb-3 col-8">
+                                                <label class="form-label">Nom</label>
+                                                <input type="text"
+                                                    class="form-control" value="<%-
+                                                    e.nom %>" name="nom">
+                                            </div>
+                                            <div class="mb-3 col-8">
+                                                <label for class="form-label">Prenom</label>
+                                                <input type="text"
+                                                    class="form-control" value="<%-
+                                                    e.prenom %>" name="prenom">
+                                            </div>
+                                            <div class="mb-3 col-8">
+                                                <label class="form-label">Photo</label>
+                                                <input type="File"
+                                                    class="form-control"
+                                                    name="photo"
+                                                    accept="image/*" />
+                                                <input type="hidden" value="<%=
+                                                    e.photo %>"
+                                                class="form-control"
+                                                name="photo1" />
+                                                <img src="../upload/<%=
+                                                    e.photo %>"
+                                                width="200px"
+                                                height="200px" class="m-2"/>
+                                            </div>
+                                            <div class="mb-3 col-8">
+                                                <label
+                                                    class="form-label">Filiere
+                                                </label>
+                                                <p><%= e.libellé %></p>
+                                                <select
+                                                    class="form-select
+                                                    mb-3
+                                                    col-6"
+                                                    aria-label="Default
+                                                    select
+                                                    example"
+                                                    name="libelle">
+                                                    
+                                                    <option  value="<%= e.libellé %>" selected> Choiser filiere</option>
+                                                    <%
+                                                        rows1.forEach(function(e){
+                                                        %>
+                                                        <option
+                                                            value="<%=
+                                                            e.libellé
+                                                            %>"><%=
+                                                                e.libellé
+                                                                %></option>
+                                                            <%
+                                                                });
+                                                                %>
+                                                            </select>
+                                                        </div>
+                                                        <input type="submit"
+                                                            name="" class="btn
+                                                            btn-primary" />
+                                                    </div>
+
+                                                </form>
+                                                <% }); %>
 
 
-                        <% rows.forEach(function(e){ %>
-                            <form class="needs-validation" method="POST" action="/editprofesseurs/<%-e.id %>" enctype="multipart/form-data">
-                                <div class="alert alert-warning col-md-8" id="editwidht">
-                                    <div class="mb-3  col-8">
-                                        <label class="form-label">Nom</label>
-                                        <input type="text" class="form-control" value="<%- e.nom %>" name="nom">
+                                                </div>
+                                            </div>
+
+
+                                        </main>
+
                                     </div>
-                                    <div class="mb-3 col-8">
-                                        <label for class="form-label">Prenom</label>
-                                        <input type="text" class="form-control" value="<%- e.prenom %>" name="prenom">
-                                    </div>
-                                    <div class="mb-3 col-8">
-                                        <label class="form-label">Photo</label>
-                                        <input type="File" class="form-control" name="photo" accept="image/*" />
-                                        <input type="hidden" value="<%= e.photo %>" class="form-control" name="photo1" />
-                                        <img src="../upload/<%=
-                                                                e.photo %>"
-                                                        width="200px"
-                                                        height="200px" class="m-2"/>
-                                    </div>
-
-                                    <input type="submit" name="" class="btn btn-primary" />
-
-                                </div>
-
-                            </form>
-                            <% }); %>
-                    </div>
-                </div>
-
-       
-         </main>
-
-                                </div>
 
 
 
@@ -150,12 +198,17 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+                                    <script
+                                        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                                        crossorigin="anonymous"></script>
+                                    <script src="js/scripts.js"></script>
+                                    <script
+                                        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+                                        crossorigin="anonymous"></script>
+                                    <script
+                                        src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
+                                        crossorigin="anonymous"></script>
+                                    <script src="js/datatables-simple-demo.js"></script>
+                                </body>
 
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="js/datatables-simple-demo.js"></script>
-</body>
-
-</html>
+                            </html>
