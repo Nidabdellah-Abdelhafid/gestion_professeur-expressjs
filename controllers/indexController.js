@@ -70,8 +70,6 @@ exports.indexmethodfind = (req, res) => {
                 db.query('SELECT * FROM filières', (err, rows1) => {
                     if (!err) {
                         
-                        
-                        console.log(rows)
                         return res.render('listprofesseurs', { rows,rows1,name:req.session.name })
         
                     } else {
